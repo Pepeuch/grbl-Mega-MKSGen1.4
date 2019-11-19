@@ -61,10 +61,10 @@
 // at character value 128 (0x80) and up to 255 (0xFF). If the normal set of realtime commands,
 // such as status reports, feed hold, reset, and cycle start, are moved to the extended set
 // space, serial.c's RX ISR will need to be modified to accomodate the change.
-// #define CMD_RESET 0x80
-// #define CMD_STATUS_REPORT 0x81
-// #define CMD_CYCLE_START 0x82
-// #define CMD_FEED_HOLD 0x83
+#define CMD_RESET 0x80                    // Precedentemente commentato
+#define CMD_STATUS_REPORT 0x81            // Precedentemente commentato
+#define CMD_CYCLE_START 0x82              // Precedentemente commentato
+#define CMD_FEED_HOLD 0x83                // Precedentemente commentato
 #define CMD_SAFETY_DOOR 0x84
 #define CMD_JOG_CANCEL  0x85
 #define CMD_DEBUG_REPORT 0x86 // Only when DEBUG enabled, sends debug report in '{}' braces.
@@ -162,7 +162,7 @@
 // alarm out and force the user to manually disengage the limit switch. Otherwise, if you have one
 // limit switch for each axis, don't enable this option. By keeping it disabled, you can perform a
 // homing cycle while on the limit switch and not have to move the machine off of it.
-// #define LIMITS_TWO_SWITCHES_ON_AXES
+#define LIMITS_TWO_SWITCHES_ON_AXES               // Precedentemente commentato
 
 // Upon a successful probe cycle, this option provides immediately feedback of the probe coordinates
 // through an automatically generated message. If disabled, users can still access the last probe
@@ -173,7 +173,7 @@
 // immediately forces a feed hold and then safely de-energizes the machine. Resuming is blocked until
 // the safety door is re-engaged. When it is, Grbl will re-energize the machine and then resume on the
 // previous tool path, as if nothing happened.
-// #define ENABLE_SAFETY_DOOR_INPUT_PIN // Default disabled. Uncomment to enable.
+#define ENABLE_SAFETY_DOOR_INPUT_PIN // Safety door enabled, comment for disable that feature ( pin analog 1 con arduino uno || Pin A12 - RAMPS Aux 2 Port)
 
 // After the safety door switch has been toggled and restored, this setting sets the power-up delay
 // between restoring the spindle and coolant and resuming the cycle.
